@@ -1,4 +1,4 @@
-package dojoweekthirteen
+package dojoweekfourteen
 
 import org.scalatest._
 
@@ -11,7 +11,7 @@ class sudokuTest extends FunSuite {
     assert(true)
   }
   
-  test("empty grouping is valid") {
+  test("empty grouboard is valid") {
      var obj = new sudoku(validBoard)
      assert(obj.isValidGrouping("........."))
 
@@ -37,7 +37,29 @@ class sudokuTest extends FunSuite {
 
   test("can get board grid") {
     var sudokuBoard = new sudoku(validBoard)
-    assert(sudokuBoard.getGrid(1,1)=="4...3....")
+    assert(sudokuBoard.getGrid(1)=="4...3....")
+    assert(sudokuBoard.getGrid(5)=="....8..1.")
+    assert(sudokuBoard.getGrid(8)=="6.32.....")
+  }
+
+  test("board is valid") {
+    var sudokuBoard = new sudoku(validBoard)
+    assert(sudokuBoard.isValid())
+  }
+
+  test("board is invalid") {
+    val inValidColumnBoard = "4.....8.543..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......";
+    assert(!new sudoku(inValidColumnBoard).isValid())
+
+    val inValidRowBoard = "4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4.4....";
+    assert(!new sudoku(inValidRowBoard).isValid())
+
+    val inValidGridBoard = "4.....8.5.4..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......";
+    assert(!new sudoku(inValidGridBoard).isValid())
+  }
+
+  test("can set number") {
+    
   }
 
     

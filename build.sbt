@@ -1,6 +1,6 @@
-organization := "scaladojoweekthirteen"
+organization := "scaladojoweekfourteen"
 
-name := "dojoThirteen"
+name := "dojoFourteen"
 
 version := "0.1-SNAPSHOT"
 
